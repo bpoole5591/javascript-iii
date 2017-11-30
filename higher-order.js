@@ -5,11 +5,13 @@
 
 // The filter function takes a callback with the parameters
 // function(element, index, wholeArray){}  Function Form
-// (element, index, wholeArray)=>{}    Arrow Form
+// even = (element, index, wholeArray)=>{}    Arrow Form
+var even = (num) => num%2===0;
 
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(even);
+   
 
 // Below we have an array of prices.  We want to calculate their totals after
 // We want to use a map function on the prices to calculate a new array of
@@ -21,10 +23,11 @@ let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
 // The map function also takes a callback with the parameters
 // function(element, index, wholeArray){}  Function Form
 // (element, index, wholeArray)=>{}    Arrow Form
+var tax = (num) => num*1.07;
 
 const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map(tax);
 
 
 
@@ -34,10 +37,11 @@ let postTaxPrices // = prices.map(/* Provide Your Callback Here );
 // The reduce function has a slightly different setup for it's callback
 // function(runningTotal, curElement, curIndex, wholeArray){} Function Form
 // (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
+sum = (total, num) => total + num;
 
 const populations = [8175133, 3792621, 2695598, 2100263]
 
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce(sum);
 
 // Now we're going to ramp up these a little bit.  Instead of just arrays of numbers
 // We are going to have array of objects that we want to use map filter and reduce with
